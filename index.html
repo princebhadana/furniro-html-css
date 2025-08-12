@@ -80,6 +80,7 @@
         <p>Bedroom</p>
     </div>
 </div>
+    </section>
 
 
 <section class="our-products">
@@ -245,9 +246,160 @@
         </div>
     </div>
 </div>
+<div class="butt pt-4">
+        <button class="btnn2">Show More</button>
+      </div>
+    </div>
 </section>
+
+
+<section class="slider-section">
+<div class="container container3">
+    <!-- Left Side Content -->
+    <div class="left">
+        <h1>50+ Beautiful rooms inspiration</h1>
+        <p>Our designer already made a lot of beautiful prototype of rooms that inspire you</p>
+        <button>Explore More</button>
+    </div>
+
+    <!-- Right Side Slider -->
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="./assets/images/slider1.png" alt="">
+                <div class="text-box">
+                    <div>
+                        <span>01 — Bed Room</span>
+                        <h2>Inner Peace</h2>
+                    </div>
+                    <div class="arrow-btn"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider2.png" alt="">
+                <div class="text-box">
+                    <div>
+                        <span>01 — Bed Room</span>
+                        <h2>Inner Peace</h2>
+                    </div>
+                    <div class="arrow-btn"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/product1.png" alt="">
+                <div class="text-box">
+                    <div>
+                        <span>01 — Bed Room</span>
+                        <h2>Inner Peace</h2>
+                    </div>
+                    <div class="arrow-btn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="next" onclick="nextSlide()">›</div>
+        <div class="nav-dots" id="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
+</section>
+
+
+  <section class="furniro-furniture" style="padding-top: 25px;">
+    <div class="banner4-text">
+        <p class="text3">Share your setup with</p>
+  <p class="text4">#FuniroFurniture</p>
+    </div>
+<div class="gallery">
+  <div class="item1"><img src="./assets/images/furniture1.png" alt=""></div>
+  <div class="item2"><img src="./assets/images/furniture2.png" alt=""></div>
+  <div class="item3"><img src="./assets/images/furniture3.png" alt=""></div>
+  <div class="item4"><img src="./assets/images/furniture4.png" alt=""></div>
+  <div class="item5"><img src="./assets/images/furniture5.png" alt=""></div>
+  <div class="item6"><img src="./assets/images/furniture6.png" alt=""></div>
+  <div class="item7"><img src="./assets/images/furniture7.png" alt=""></div>
+</div>
+  </section>
+
+<section class="footer-main">
+  <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>Funiro.</h2>
+            <p>400 University Drive Suite 200 Coral Gables,<br>
+            FL 33134 USA</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-help">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">Payment Options</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Privacy Policies</a></li>
+            </ul>
+        </div>
+
+        <div class="newsletter">
+            <h4>Newsletter</h4>
+            <input type="email" placeholder="Enter Your Email Address">
+            <button>SUBSCRIBE</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        2023 Funiro. All rights reserved
+    </div>
+</footer>
+</section>
+
+
+
+
+
+
+
+
+
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(n) {
+    if (n >= slides.length) index = 0;
+    if (n < 0) index = slides.length - 1;
+    document.getElementById("slider").style.transform = `translateX(${-index * 50}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+function nextSlide() {
+    index++;
+    showSlide(index);
+}
+
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+        index = i;
+        showSlide(index);
+    });
+});
+</script>
    
 
-    </section>
+
 </body>
 </html>
